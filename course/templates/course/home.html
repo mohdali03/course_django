@@ -1,0 +1,30 @@
+{% extends "course/layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container center">
+    <img src="{% static 'course/img/classes.jpg' %}" alt="">
+</div>
+<h1>Course</h1>
+    <table class='table' >
+        <thead class='thead-dark'>
+            <tr>
+                <th>Name</th>
+                <th>duration</th>
+                <th style="width: 400px;" >desc</th>
+                <th>fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%  for course in courses %}
+            <tr>
+                <td>{{course.name|capfirst }}</td>
+                <td>{{course.duration}}</td>
+                <td>{{course.desc|truncatewords:5}}</td>
+                <td>{{course.fee}}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
