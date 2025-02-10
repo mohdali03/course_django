@@ -1,0 +1,22 @@
+{% extends "course/layout.html" %}
+{% load static %}
+{% block content %}
+<form action=""class="col s10"  method="post">
+<h1>Create Course</h1>
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<hr>
+
+<form action=""class="col s12"   method="post" enctype="multipart/form-data">
+<h1>Multiple Course</h1>
+
+    {% csrf_token %}
+        {{ filesfrom.as_p }}
+    <button type="submit" class = "waves-effect waves-light btn" style = "background-color: teal">Multiple Course Create</button>
+</form>
+
+{% endblock %}

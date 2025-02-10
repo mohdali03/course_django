@@ -1,0 +1,10 @@
+{% extends "course/layout.html" %}
+{% load static %}
+
+{% block content %}
+<form action="" method="post"> 
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Create User</button>
+</form>
+{% endblock content %}

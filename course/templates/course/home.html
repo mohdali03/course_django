@@ -1,11 +1,16 @@
 {% extends "course/layout.html" %}
 {% load static %}
-
+{% load course_extras %}
 {% block content %}
 <div class="container center">
     <img src="{% static 'course/img/classes.jpg' %}" alt="">
 </div>
 <h1>Course</h1>
+    <ul>
+        {% for c, k in cd.items %}
+        <li>{{c|capfirst|rep }} : {{k|floatformat:"1"}}</li>
+        {% endfor %}
+    </ul>
     <table class='table' >
         <thead class='thead-dark'>
             <tr>

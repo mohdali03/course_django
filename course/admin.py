@@ -13,4 +13,7 @@ class CourseAdmin(admin.ModelAdmin):
     description.short_description = 'description'
 
     list_display = ('name', 'duration', 'description', 'fees')
+    search_fields = ('name', 'fee')
+    list_filter = ('duration', 'fee')
+    
 admin.site.register(Course, CourseAdmin)
